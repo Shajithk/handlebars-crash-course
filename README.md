@@ -2,7 +2,7 @@
 
 Learning features:
 
-1. Dynamically placed data
+1. Dynamically Placed Data
 1. Templates
 1. Working with Arrays
 1. Helper functions
