@@ -16,12 +16,17 @@
         Large
       {{/makeRadio}}
 
-      {{#areEqual 1 1}}
+      {{#areEqual 1 2}}
         Numbers are equal.
       {{else}}
         Numbers are not equal!
       {{/areEqual}}
       <br><br>
+      {{#if "isActive"}}
+        <img src="ntt-logo.png" alt="Active">
+        {{else}}
+        <img src="ntt-logo-horz.png" alt="Inactive">
+      {{/if}}
     </script>
 
     <script type="text/javascript">
@@ -42,7 +47,17 @@
       Handlebars.registerHelper("areEqual", function(num1, num2, options) {
         if (num1 === num2) {
           return options.fn(this);
-        } else options.inverse(this);
+        } else {
+          return options.inverse(this);
+        }
+      });
+
+      Handlebars.registerHelper("if", function(data, options) {
+        if(data === "isActive") {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
       });
 
       var templateData = template({});
